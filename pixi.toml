@@ -1,0 +1,16 @@
+[workspace]
+authors = ["Joan Gizzio <joan.gizzio@fccc.edu>", "Roland Dunbrack <roland.dunbrack@fccc.edu>"]
+channels = ["conda-forge", "bioconda"]
+name = "kincore-standalone3"
+platforms = ["linux-64", "osx-64", "osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+kincore = "python kinase_state.py"
+
+[dependencies]
+python = "3.8.*"
+pandas = ">=2.0.3,<3"
+numpy = ">=1.24.4,<2"
+biopython = ">=1.83,<2"
+hmmer = ">=3.4,<4"
