@@ -64,7 +64,7 @@ Or (if using Anaconda):
 ```
 conda activate kincore-standalone3
 ```
-Now you can run kincore using ```python kinase_state.py``` instead of ```pixi run kincore```. For example:
+Now you can run kincore using ```python kinase_state.py```. For example:
 ```
 python kinase_state.py list.txt > output.txt &
 ```
