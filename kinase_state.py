@@ -46,7 +46,7 @@ def read_inputlist_pool(listfilename, hmm_loc):
         line=line.replace('.pdb','')
         line=line.replace('.cif.gz','')
         line=line.replace('.cif','')
-        if len(line)>maxlen: maxlen=len(line)
+        if len(os.path.basename(line))>maxlen: maxlen=len(os.path.basename(line))
     INPUTFILE.close()
 #    for filename in fileset:
 #        identify_state((filename, hmm_loc, maxlen)) #for debugging purposes
@@ -210,10 +210,10 @@ def identify_state(args):
             shortlist=shortfilename.split("/")
             shortfilename=shortlist[-1]
             shortlist=shortfilename.split("_")
-            if len(shortlist)>1:
-                kinase=shortlist[0] + "_" + shortlist[1]
-            else:
-                kinase=shortlist[0]
+#            if len(shortlist)>1: #only useful if structures have Kincore naming convention (e.g., CAMK_AURKA_HUMAN_1OL5A)
+#                kinase=shortlist[0] + "_" + shortlist[1]
+#            else:
+#                kinase=shortlist[0]
             if int(maxfilenamelen)>3:
                 filenamelen=maxfilenamelen
             else:
@@ -225,8 +225,8 @@ def identify_state(args):
             shortstate=shortstate.replace("-","")
             
             # output string
-            introstring= (f'{kinase:14} '
-                          f'{shortfilename:{filenamelen}} '
+#            introstring= (f'{kinase:14} '
+            introstring= (f'{shortfilename:{filenamelen}} '
                           f'{conf_df.at[index, "Model_id"]:2.0f} '
                           f'{conf_df.at[index, "Chain_id"]:<4} '
                           f'{shortstate:<44}  '
@@ -360,7 +360,7 @@ if __name__ == '__main__':
     args=parser.parse_args()
     
     pdbfilename=args.PDB
-    lenpdbfilename=len(pdbfilename)
+    lenpdbfilename=len(os.path.basename(pdbfilename))
     # file of pdbfilenames
     if '.txt' in pdbfilename:
         results=read_inputlist_pool(pdbfilename, hmm_loc)
@@ -381,5 +381,5 @@ if __name__ == '__main__':
             print(result,end='')
         else:
             print(result)
-        if "#" in errorstring:
-            print(errorstring)
+        if "#" in errorstring: 
+            print(errorstring, file=sys.stderr)
