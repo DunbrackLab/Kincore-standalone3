@@ -37,7 +37,7 @@ Run the help command to see available options:
 ```
 pixi run kincore -h
 ```
-Kincore can be run on a single mmCIF or PDB file (can contain multiple models in a single file, e.g., MD trajectories or PDB structures).
+Kincore can be run on a single mmCIF or PDB file (can contain multiple models in a single file, e.g., MD trajectories or NMR structures).
 ```
 pixi run kincore 1OL5.cif
 pixi run kincore 1OL5.pdb
