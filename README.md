@@ -18,7 +18,7 @@ That's it. You should now be able to run kincore inside the Kincore-standalone3 
 *Note: the first time you run this command, pixi will create the environment and install all the necessary packages in the Kincore-standalone3 directory.*
 
 ### Option 2: use Anaconda
-Optionally, you can use Anaconda to create a virtual enviroment and install the necessary packages.
+You can also create an anconda enviroment and install the necessary packages.
 ```
 conda create --name 'kincore-standalone3' python=3.8 pandas numpy biopython hmmer --channel conda-forge --channel bioconda
 ```
