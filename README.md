@@ -5,7 +5,7 @@ First, download the repository:
 git clone https://github.com/DunbrackLab/Kincore-standalone3
 ```
 Then, create a virtual environment with the necessary packages to run kincore.
-### Option 1: use pixi (recommended)
+### Option 1: use pixi
 Install pixi if you haven't already:
 ```
 curl -fsSL https://pixi.sh/install.sh | bash
@@ -31,7 +31,7 @@ Go to the Kincore-standalone3 folder if you haven't already:
 ```
 cd Kincore-standalone3
 ```
-*Note: any of the following commands can also be run using ```python kinase_state.py``` instead of ```pixi run kincore```, provided you have the necessary packages installed and/or virtual environment active.*
+Note: any of the following commands can also be run using ```python kinase_state.py``` instead of ```pixi run kincore```, provided you have the necessary packages installed and/or virtual environment active.
 
 Run the help command to see available options:
 ```
