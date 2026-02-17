@@ -269,7 +269,7 @@ def distance_atoms(pdbfilename, model_id, chain_id, res1, res2, atm1, atm2, stru
 
 
     if atom_present==2:
-        distance=np.round((residue1[atm1]-residue2[atm2]),2)
+        distance=(residue1[atm1]-residue2[atm2])
         return distance
     else:
         return 999.0
@@ -323,7 +323,7 @@ def distance_sidechains(pdbfilename, model_id, chain_id, res1, res2, structure):
                 if atom2.element=="H": continue
                 if residue2.get_resname() == "GLY" and atom2name in ("N","C","O"): continue
                 if residue2.get_resname() != "GLY" and atom2name in ("N","CA","C","O"): continue
-                distance=np.round((residue1[atom1name]-residue2[atom2name]),2)
+                distance=(residue1[atom1name]-residue2[atom2name])
                 if distance<mindist:
                     mindist=distance
                     minatom1name=atom1name

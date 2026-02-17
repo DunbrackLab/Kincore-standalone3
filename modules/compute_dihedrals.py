@@ -17,7 +17,7 @@ def compute_phi(structure_, model_, chain_, prev_residue_, curr_residue_):
         curr_n=structure_[model_.id][chain_.id][curr_residue_.id]['N'].get_vector()
         curr_ca=structure_[model_.id][chain_.id][curr_residue_.id]['CA'].get_vector()
         curr_c=structure_[model_.id][chain_.id][curr_residue_.id]['C'].get_vector()
-        phi=round(math.degrees(PDB.calc_dihedral(prev_c,curr_n,curr_ca,curr_c)),2)
+        phi=math.degrees(PDB.calc_dihedral(prev_c,curr_n,curr_ca,curr_c))
     return phi
 
 def compute_psi(structure_,model_,chain_,curr_residue_,next_residue_):
@@ -31,7 +31,7 @@ def compute_psi(structure_,model_,chain_,curr_residue_,next_residue_):
         curr_ca=structure_[model_.id][chain_.id][curr_residue_.id]['CA'].get_vector()
         curr_c=structure_[model_.id][chain_.id][curr_residue_.id]['C'].get_vector()
         next_n=structure_[model_.id][chain_.id][next_residue_.id]['N'].get_vector()
-        psi=round(math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_c,next_n)),2)
+        psi=math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_c,next_n))
     return psi
 
 def compute_omega(structure_,model_,chain_,prev_residue_,curr_residue_):
@@ -45,7 +45,7 @@ def compute_omega(structure_,model_,chain_,prev_residue_,curr_residue_):
         prev_c=structure_[model_.id][chain_.id][prev_residue_.id]['C'].get_vector()
         curr_n=structure_[model_.id][chain_.id][curr_residue_.id]['N'].get_vector()
         curr_ca=structure_[model_.id][chain_.id][curr_residue_.id]['CA'].get_vector()
-        omega=round(math.degrees(PDB.calc_dihedral(prev_ca,prev_c,curr_n,curr_ca)),2)
+        omega=math.degrees(PDB.calc_dihedral(prev_ca,prev_c,curr_n,curr_ca))
     return omega
 
 def compute_chi1(structure_,model_,chain_,curr_residue_):
@@ -70,23 +70,23 @@ def compute_chi1(structure_,model_,chain_,curr_residue_):
                                             curr_residue_.resname=='TRP' or
                                             curr_residue_.resname=='TYR'):
             curr_cg=structure_[model_.id][chain_.id][curr_residue_.id]['CG'].get_vector()
-            chi1=round(math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_cg)),2)
+            chi1=math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_cg))
 
         if curr_residue_.has_id('SG') and curr_residue_.resname=='CYS':
             curr_sg=structure_[model_.id][chain_.id][curr_residue_.id]['SG'].get_vector()
-            chi1=round(math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_sg)),2)
+            chi1=math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_sg))
 
         if curr_residue_.has_id('CG1') and (curr_residue_.resname=='VAL' or curr_residue_.resname=='ILE'):
             curr_cg1=structure_[model_.id][chain_.id][curr_residue_.id]['CG1'].get_vector()
-            chi1=round(math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_cg1)),2)
+            chi1=math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_cg1))
 
         if  curr_residue_.has_id('OG') and curr_residue_.resname=='SER':
             curr_og=structure_[model_.id][chain_.id][curr_residue_.id]['OG'].get_vector()
-            chi1=round(math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_og)),2)
+            chi1=math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_og))
 
         if  curr_residue_.has_id('OG1') and curr_residue_.resname=='THR':
             curr_og1=structure_[model_.id][chain_.id][curr_residue_.id]['OG1'].get_vector()
-            chi1=round(math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_og1)),2)
+            chi1=math.degrees(PDB.calc_dihedral(curr_n,curr_ca,curr_cb,curr_og1))
     return chi1
 
 def compute_chi2(structure_,model_,chain_,curr_residue_):
@@ -102,34 +102,34 @@ def compute_chi2(structure_,model_,chain_,curr_residue_):
                                             curr_residue_.resname=='LYS' or
                                             curr_residue_.resname=='PRO'):
             curr_cd=structure_[model_.id][chain_.id][curr_residue_.id]['CD'].get_vector()
-            chi2=round(math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_cd)),2)
+            chi2=math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_cd))
 
         if curr_residue_.has_id('OD1') and (curr_residue_.resname=='ASN' or curr_residue_.resname=='ASP'):
             curr_od1=structure_[model_.id][chain_.id][curr_residue_.id]['OD1'].get_vector()
-            chi2=round(math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_od1)),2)
+            chi2=math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_od1))
 
         if curr_residue_.has_id('ND1') and curr_residue_.resname=='HIS':
 
             curr_nd1=structure_[model_.id][chain_.id][curr_residue_.id]['ND1'].get_vector()
-            chi2=round(math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_nd1)),2)
+            chi2=math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_nd1))
 
         if curr_residue_.has_id('CD1') and (curr_residue_.resname=='LEU' or
                                             curr_residue_.resname=='PHE' or
                                             curr_residue_.resname=='TRP' or
                                             curr_residue_.resname=='TYR'):
             curr_cd1=structure_[model_.id][chain_.id][curr_residue_.id]['CD1'].get_vector()
-            chi2=round(math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_cd1)),2)
+            chi2=math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_cd1))
 
         if curr_residue_.has_id('SD') and curr_residue_.resname=='MET':
             curr_sd=structure_[model_.id][chain_.id][curr_residue_.id]['SD'].get_vector()
-            chi2=round(math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_sd)),2)
+            chi2=math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg,curr_sd))
 
     if curr_residue_.has_id('CA') and curr_residue_.has_id('CB') and curr_residue_.has_id('CG1') and curr_residue_.has_id('CD1') and curr_residue_.resname=='ILE':
         curr_ca=structure_[model_.id][chain_.id][curr_residue_.id]['CA'].get_vector()
         curr_cb=structure_[model_.id][chain_.id][curr_residue_.id]['CB'].get_vector()
         curr_cg1=structure_[model_.id][chain_.id][curr_residue_.id]['CG1'].get_vector()
         curr_cd1=structure_[model_.id][chain_.id][curr_residue_.id]['CD1'].get_vector()
-        chi2=round(math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg1,curr_cd1)),2)
+        chi2=math.degrees(PDB.calc_dihedral(curr_ca,curr_cb,curr_cg1,curr_cd1))
 
     return chi2
 
@@ -142,22 +142,22 @@ def compute_chi3(structure_,model_,chain_,curr_residue_):
 
         if curr_residue_.has_id('NE') and curr_residue_.resname=='ARG':
             curr_ne=structure_[model_.id][chain_.id][curr_residue_.id]['NE'].get_vector()
-            chi3=round(math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_cd,curr_ne)),2)
+            chi3=math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_cd,curr_ne))
 
         if curr_residue_.has_id('OE1') and (curr_residue_.resname=='GLN' or curr_residue_.resname=='GLU'):
             curr_oe1=structure_[model_.id][chain_.id][curr_residue_.id]['OE1'].get_vector()
-            chi3=round(math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_cd,curr_oe1)),2)
+            chi3=math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_cd,curr_oe1))
 
         if curr_residue_.has_id('CE') and curr_residue_.resname=='LYS':
             curr_ce=structure_[model_.id][chain_.id][curr_residue_.id]['CE'].get_vector()
-            chi3=round(math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_cd,curr_ce)),2)
+            chi3=math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_cd,curr_ce))
 
     if curr_residue_.has_id('CB') and curr_residue_.has_id('CG') and curr_residue_.has_id('SD') and curr_residue_.has_id('CE') and curr_residue_.resname=='MET':
         curr_cb=structure_[model_.id][chain_.id][curr_residue_.id]['CB'].get_vector()
         curr_cg=structure_[model_.id][chain_.id][curr_residue_.id]['CG'].get_vector()
         curr_sd=structure_[model_.id][chain_.id][curr_residue_.id]['SD'].get_vector()
         curr_ce=structure_[model_.id][chain_.id][curr_residue_.id]['CE'].get_vector()
-        chi3=round(math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_sd,curr_ce)),2)
+        chi3=math.degrees(PDB.calc_dihedral(curr_cb,curr_cg,curr_sd,curr_ce))
     return chi3
 
 def compute_chi4(structure_,model_,chain_,curr_residue_):
@@ -171,7 +171,7 @@ def compute_chi4(structure_,model_,chain_,curr_residue_):
 
         if curr_residue_.has_id('CZ') and curr_residue_.resname=='ARG':
             curr_cz=structure_[model_.id][chain_.id][curr_residue_.id]['CZ'].get_vector()
-            chi4=round(math.degrees(PDB.calc_dihedral(curr_cg,curr_cd,curr_ne,curr_cz)),2)
+            chi4=math.degrees(PDB.calc_dihedral(curr_cg,curr_cd,curr_ne,curr_cz))
 
     # Lysine
     if curr_residue_.has_id('CG') and curr_residue_.has_id('CD') and curr_residue_.has_id('CE'):
@@ -181,7 +181,7 @@ def compute_chi4(structure_,model_,chain_,curr_residue_):
 
         if curr_residue_.has_id('NZ') and curr_residue_.resname=='LYS':
             curr_nz=structure_[model_.id][chain_.id][curr_residue_.id]['NZ'].get_vector()
-            chi4=round(math.degrees(PDB.calc_dihedral(curr_cg,curr_cd,curr_ce,curr_nz)),2)
+            chi4=math.degrees(PDB.calc_dihedral(curr_cg,curr_cd,curr_ce,curr_nz))
 
     return chi4
 

@@ -25,10 +25,10 @@ with open(sys.argv[1], 'r') as f:
     for line in tqdm.tqdm(f.readlines()):
         if line == '\n':
             if prev_set != 'Autoinhibit': #Check if the Autoinhibit entry was present in the previous PDB
-                db[l[0]]['Autoinhibit'] = {}
-                db[l[0]]['Autoinhibit']['HRD3'] = 'None'
-                db[l[0]]['Autoinhibit']['Pseudosub'] = 'None'
-                db[l[0]]['Autoinhibit']['Distance'] = 'None'
+                db[l[0]][l[1]][l[2]]['Autoinhibit'] = {}
+                db[l[0]][l[1]][l[2]]['Autoinhibit']['HRD3'] = 'None'
+                db[l[0]][l[1]][l[2]]['Autoinhibit']['Pseudosub'] = 'None'
+                db[l[0]][l[1]][l[2]]['Autoinhibit']['Distance'] = 'None'
         else:
             l = line.strip().split()
             if l[0] not in db.keys():
@@ -62,7 +62,7 @@ with open(sys.argv[1], 'r') as f:
                 db[l[0]][l[1]][l[2]][l[4]]['APE9-dist'] = l[27]
                 db[l[0]][l[1]][l[2]][l[4]]['HRD'] = l[28]
 
-            if l[5] == 'Residues':
+            if l[4] == 'Residues':
                 prev_set = l[4]
                 key = ''
                 if l[4] not in db[l[0]][l[1]][l[2]].keys():

@@ -1,0 +1,11 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+#PDB files
+kinasechains_renum_kcname_012126/
+#Output files
+*.txt
+!human_catalytic.txt
+*.json
+*.log
+tally_active.py
