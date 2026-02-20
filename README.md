@@ -191,3 +191,16 @@ List of dihedral angles used for conformational assignments.
 | APE9 |  φ,ψ of APE9 residue (6th residue from end of activation loop: X in XxxxxxAPE). B region for active TYR kinases
 | APE10 |  φ,ψ of APE10 residue (6th residue from end of activation loop: X in XxxxxxxAPE).	B region for active TYR kinases
 
+#### Row 4: ``` Ligands ``` 
+List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, and types
+| Nomenclature | Description |
+| ------------------- | ------------------- |
+| ATPlike | Any ATP-like PDB ligand (ATP, ACP, ANP, ADP, AGS)
+| Type1 | Ligand occupies ATP-binding site
+| Type1.5 | Ligand occupies ATP-binding site and part of Chelix site
+| Type2 | Ligand occupies both ATP-binding site and Chelix site
+| Type3 | Ligand occupies Chelix site
+| Allosteric | Ligand is elsewhere
+
+#### Row 4: ``` Actloop ``` 
+Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Useful for calculating min(pLDDT) of activation loop of AlphaFold/Boltz models.
