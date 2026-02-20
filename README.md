@@ -31,7 +31,7 @@ Go to the Kincore-standalone3 folder if you haven't already:
 ```
 cd Kincore-standalone3
 ```
-Note: any of the following commands can also be run using ```python kinase_state.py``` instead of ```pixi run kincore```, provided you have the necessary packages installed and/or virtual environment active.
+Note: any of the following commands can also be run using ```python kinase_state.py``` instead of ```pixi run kincore```, provided you have the necessary packages installed (such as hmmsearch) and/or virtual environment active.
 
 Run the help command to see available options:
 ```
@@ -191,7 +191,7 @@ List of dihedral angles used for conformational assignments.
 | APE9 |  φ,ψ of APE9 residue (6th residue from end of activation loop: X in XxxxxxAPE). B region for active TYR kinases
 | APE10 |  φ,ψ of APE10 residue (6th residue from end of activation loop: X in XxxxxxxAPE).	B region for active TYR kinases
 
-#### Row 4: ``` Ligands ``` 
+#### Row 5: ``` Ligands ``` 
 List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, and types
 | Nomenclature | Description |
 | ------------------- | ------------------- |
@@ -202,5 +202,5 @@ List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, 
 | Type3 | Ligand occupies Chelix site
 | Allosteric | Ligand is elsewhere
 
-#### Row 4: ``` Actloop ``` 
+#### Row 6: ``` Actloop ``` 
 Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Useful for calculating min(pLDDT) of activation loop of AlphaFold/Boltz models.
