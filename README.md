@@ -134,8 +134,6 @@ The 5th column contains another header that tells you what kind of data follows 
 List of residues used for conformational assignments. Kincore nomenclature followed by the residue type and number in the sequence (separated by ".").
 | Nomenclature | Description |
 | ------------------- | ------------------- |
-| APEp3  | "APE plus 3", i.e., the third residue N-terminal to the APE motif. |
-| APEp2  | "APE plus 2", i.e., the 2nd residue N-terminal to the APE motif. |
 | APE | The end of the APE motif / the "E" of the APE (or equivalent residue). |
 | APE6 | The 6th residue from the end of the APE motif, counting backwards starting from the "E" of the APE. |
 | APE7 | The 7th residue from the end of the APE motif. |
@@ -204,3 +202,6 @@ List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, 
 
 #### Row 6: ``` Actloop ``` 
 Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Useful for calculating min(pLDDT) of activation loop of AlphaFold/Boltz models.
+
+#### Row 6: ``` Autoinhibit ``` 
+Present if there is any Ser, Thr, or Tyr in activation loop in hydrogen bonding distance of HRD-Asp
