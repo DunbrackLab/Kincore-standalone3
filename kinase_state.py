@@ -251,8 +251,6 @@ def identify_state(args):
 
                 f'{introstring}'
                 f'{"Residues":9} '
-                f'{conf_df.at[index, "APEp3_string"]:<9} '
-                f'{conf_df.at[index, "APEp2_string"]:<9} '
                 f'{conf_df.at[index, "APE_string"]:<9} '
                 f'{conf_df.at[index, "APE6_string"]:<9} '
                 f'{conf_df.at[index, "APE7_string"]:<9} '
@@ -333,9 +331,9 @@ def identify_state(args):
                 f'{introstring}'
                 f'{"Actloop":9} '
                 f'{int(conf_df.at[index, "ActLoopNresidues"]):4}    '
-                f'{conf_df.at[index, "ActLoopBfacAve"]:.2f}   '
-                f'{conf_df.at[index, "ActLoopBfacMin"]:.2f}   '
-                f'{conf_df.at[index, "ActLoopBfacMax"]:.2f}'
+                f'Ave {conf_df.at[index, "ActLoopBfacAve"]:.2f}   '
+                f'Min {conf_df.at[index, "ActLoopBfacMin"]:.2f}   '
+                f'Max {conf_df.at[index, "ActLoopBfacMax"]:.2f}'
                 f'\n'
 )                   
             if conf_df.at[index,'Autoinhibit'] != '':
