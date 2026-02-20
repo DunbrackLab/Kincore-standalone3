@@ -114,7 +114,7 @@ The 5th column contains another header that tells you what kind of data follows 
 | score  273.7 | HMM score of the chain A sequence for CAMK.hmm |
 | Active | The activation loop and αC-helix pass all of the criteria for active kinases |
 | DFGin | The DFG Phe (or equivalent residue) is flipped "in" towards the αC-helix |
-| BLAminus | The backbone dihedrals of the first three residues of the XDFG motif occupy the Ramchandran regions B, L, and A, and the χ1 dihedral of the DFG Phe sidechain (or equivalent residue) is gauche-minus|
+| BLAminus | The backbone dihedrals of the first three residues of the XDFG motif occupy the Ramachandran regions B, L, and A, and the χ1 dihedral of the DFG Phe sidechain (or equivalent residue) is gauche-minus|
 | Saltbr-in | A salt bridge is formed between the αC-helix Glu and β3-strand Lys |
 | ActLoopNT-in | The N-terminus of the activation loop (near the DFG motif) is hydrogen bonded to the HRD loop |
 | ActLoopCT-in | The N-terminus of the activation loop (near the DFG motif) is hydrogen bonded to the HRD loop |
@@ -161,3 +161,33 @@ List of residues used for conformational assignments. Kincore nomenclature follo
 | aFasp | The conserved Asp in the αF-helix.  |
 
 #### Row 3: ``` Distances ``` 
+List of distances used for conformational assignments. 
+| Nomenclature | Description |
+| ------------------- | ------------------- |
+| Glu4_Phe | Glu4-Cα / DFG-Phe Cζ distance for DFGin/DFGout/DFGinter calculation. Glu4 is 4 residues after the salt-bridge Glu
+| Lys_Phe | Lys-Cα / DFG-Phe Cζ distance for DFGin/DFGout/DFGinter calculation. Lys is the salt-bridge Lys
+| Lys_Glu | Lys-Cβ / Glu-Cβ distance for Chelix-in/Chelix-out calculation.
+| SaltBr | Lys-Nζ / Glu OE1,OE2 distance for SaltBr-in/SaltBr-out calculation. Minimum of distance to OE1 and OE2
+| DFG6_XHRD | DFG6-N/O / Xhrd O/N distance for ActLoopNT-in/ActLoopNT-out calculation. Minimum of two backbone-backbone hydrogen bonds distances.
+| APE9_Arg | APE9-Cα / hRd-Arg O for ActLoopCT-in/ActLoopCT-out calculation.
+| APE10_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
+| APE11_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
+| APE12_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
+| Spine | Spine1-Spine2-Spine3-MaxSpine distances. All between side-chain atoms of residue pairs. Spine1 = (HRD-His, DFG-Phe), Spine2 = (DFG-Phe, Glu4), Spine3 (Glu4, HPN7). MaxSpine = max(Spine1, Spine2, Spine3) to determine if spine is broken (MaxSpine>4.5 Å)
+
+#### Row 4: ``` Dihedral angles ``` 
+List of dihedral angles used for conformational assignments. 
+| Nomenclature | Description |
+| ------------------- | ------------------- |
+| HRD |	φ,ψ	of HRD-His in A region	of Ramachandran	map for	active kinases
+| Arg | φ,ψ of HRD-Arg in L region	of Ramachandran	map for	active kinases
+| XDFG | φ,ψ of X of XDFG motif. B region for BLAminus state of active kinases
+| DFG |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Asp	of DFG motif. L region for BLAminus state of active kinases
+| DFG2 |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Phe of DFG	motif. A region for BLAminus state of active kinases
+| DFG3 |  φ,ψ of Gly of DFG	motif. A region for BLA(A)minus state of active kinases
+| APE6 |  φ,ψ of APE6 residue (6th residue from end of activation loop: X in XxxAPE). APE7,APE6 == AA or BL for active kinases
+| APE7 |  φ,ψ of APE7 residue (6th residue from end of activation loop: X in XxxxAPE). APE7,APE6 == AA or BL for active kinases
+| APE8 |  φ,ψ,χ<sub>1</sub> of APE8 residue (6th residue from end of activation loop: X in XxxxxAPE). B region for active	kinases. χ<sub>1</sub> in (-120°,0°).
+| APE9 |  φ,ψ of APE9 residue (6th residue from end of activation loop: X in XxxxxxAPE). B region for active TYR kinases
+| APE10 |  φ,ψ of APE10 residue (6th residue from end of activation loop: X in XxxxxxxAPE).	B region for active TYR kinases
+
