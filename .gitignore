@@ -8,4 +8,7 @@ kinasechains_renum_kcname_012126/
 !human_catalytic.txt
 *.json
 *.log
+*.cif
+*.tsv
 tally_active.py
+modules/__pycache__

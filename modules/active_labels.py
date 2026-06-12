@@ -112,6 +112,7 @@ def active_labels(index, df):
     dis_ape12=df.at[index, 'APE12-DFG4-dis']
     HRD_Phi=df.at[index, 'HRD_Phi'] ;     HRD_Psi=df.at[index, 'HRD_Psi']
     Arg_Phi=df.at[index, 'Arg_Phi'] ;     Arg_Psi=df.at[index, 'Arg_Psi']
+    Asp_Chi1=df.at[index, 'Asp_Chi1']
     Phe_Phi=df.at[index, 'Phe_Phi'] ;     Phe_Psi=df.at[index, 'Phe_Psi'] ;   Phe_Chi1=df.at[index, 'Phe_Chi1']
     Gly_Phi=df.at[index, 'Gly_Phi'] ;     Gly_Psi=df.at[index, 'Gly_Psi']
     APE10_Phi=df.at[index, 'APE10_Phi'] ; APE10_Psi=df.at[index, 'APE10_Psi']
@@ -151,6 +152,16 @@ def active_labels(index, df):
             HRD_label="HRD-out"
     df.at[index, 'HRD_label']=HRD_label
     
+    # DFG Asp rotamer
+    if (df.at[index,'Asp_restype'] != "D"):
+        Asp_rot_label="DFGAsp-rot-na"
+    elif (Asp_Chi1 > 900):
+        Asp_rot_label="DFGAsp-rot-none"
+    else:
+        Asp_rot_label="DFGAsp-rot-out"
+        if (dihe_in_range(120,240,Asp_Chi1)):  Asp_rot_label="DFGAsp-rot-in"
+    df.at[index, 'Asp_rot_label']=Asp_rot_label
+
     # ActLoopNT calculation
     if dis_xhrd <= hbondcutoff:
         df.at[index, 'ActLoopNT_label']='ActLoopNT-in'
@@ -239,17 +250,12 @@ def active_labels(index, df):
 
     # Distance criteria on APE9-APE12
 
+    # APE9
     # APE9: APE9-Cα/hRd-O distance < 6 Å in non-TYR kinases
-    # APE9-Cα/hRd-O distance < 8 Å
-    if group == "TYR":
-        ape9cutoff=8.0
-    else:
-        ape9cutoff=6.0
-
-    if APEtype=="TYR" or APEtype=="nonTYR":
+    if APEtype=="nonTYR":
         if dis_ape9>900:
             APE9_dist_label="APE9-dist-none"
-        elif dis_ape9 <= ape9cutoff:
+        elif dis_ape9 <= 6.0:
             APE9_dist_label="APE9-dist-in"
         else:
             APE9_dist_label="APE9-dist-out"
@@ -333,6 +339,7 @@ def active_labels(index, df):
     ActivityState="Active"
     if df.at[index, 'Spatial_label'] != "DFGin":     ActivityState='Inactive' # must be DFGin not none
     if df.at[index, 'Dihedral_label'] != "BLAminus": ActivityState='Inactive' # must be BLAminus not none
+    if df.at[index, 'Asp_rot_label'] != "DFGAsp-rot-in": ActivityState='Inactive'
     if group=="PKDCC" and df.at[index, 'Dihedral_label'] == "ABAminus": ActivityState="Active" # exception
     if df.at[index, 'HRD_label'] == "HRD-out" :      ActivityState='Inactive' # must be HRD-in or HRD-na
     if df.at[index, 'HRD_label'] == "HRD-none" :     ActivityState='Inactive' # must be HRD-in or HRD-na

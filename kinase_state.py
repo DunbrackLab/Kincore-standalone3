@@ -240,6 +240,7 @@ def identify_state(args):
                 f'score {conf_df.at[index,"Score"]:6.1f}   ' 
                 f'{conf_df.at[index, "Activity_label"]:<8} '
                 f'{conf_df.at[index, "Spatial_label"]:<8} '
+                f'{conf_df.at[index, "Asp_rot_label"]:<11} '
                 f'{conf_df.at[index, "Dihedral_label"]:<8} '
                 f'{conf_df.at[index, "Chelix_label"]:<11} '
                 f'{conf_df.at[index, "Saltbr_label"]:<11} '

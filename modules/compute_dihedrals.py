@@ -255,7 +255,14 @@ def compute_dihedrals(pdbfilename,index,conf_df,structure):
                         conf_df.at[index,'Asp_Phi']=phi
                         conf_df.at[index,'Asp_Psi']=psi
                         conf_df.at[index,'Asp_Chi1']=chi1
+                        if conf_df.at[index,'Asp_Chi1']<0:
+                            conf_df.at[index,'Asp_Chi1']=conf_df.at[index,'Asp_Chi1']+360
                         conf_df.at[index,'Asp_Chi2']=chi2
+                        if conf_df.at[index,'Asp_Chi2']<-90:
+                            conf_df.at[index,'Asp_Chi2']=conf_df.at[index,'Asp_Chi2']+180
+                        if (conf_df.at[index,'Asp_Chi2']>90) and (conf_df.at[index, 'Asp_Chi2'] < 900):
+                            conf_df.at[index,'Asp_Chi2']=conf_df.at[index,'Asp_Chi2']-180
+
                     if curr_residue.id[1]==int(conf_df.at[index,'Asp_num']-insertion_num+1):
                         conf_df.at[index,'Phe_Phi']=phi
                         conf_df.at[index,'Phe_Psi']=psi
