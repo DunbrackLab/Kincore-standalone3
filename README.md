@@ -167,10 +167,11 @@ List of distances used for conformational assignments.
 | Lys_Glu | Lys-Cβ / Glu-Cβ distance for Chelix-in/Chelix-out calculation.
 | SaltBr | Lys-Nζ / Glu OE1,OE2 distance for SaltBr-in/SaltBr-out calculation. Minimum of distance to OE1 and OE2
 | DFG6_XHRD | DFG6-N/O / Xhrd O/N distance for ActLoopNT-in/ActLoopNT-out calculation. Minimum of two backbone-backbone hydrogen bonds distances.
-| APE9_Arg | APE9-Cα / hRd-Arg O for ActLoopCT-in/ActLoopCT-out calculation.
+| APE9_Arg | APE9-Cα / hRd-Arg O for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
 | APE10_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
 | APE11_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
 | APE12_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases
+| APE3_aFasp3 | APE3-Cα / aFasp3-Cα distance useful for identifying ActLoop-swapped dimers
 | Spine | Spine1-Spine2-Spine3-MaxSpine distances. All between side-chain atoms of residue pairs. Spine1 = (HRD-His, DFG-Phe), Spine2 = (DFG-Phe, Glu4), Spine3 (Glu4, HPN7). MaxSpine = max(Spine1, Spine2, Spine3) to determine if spine is broken (MaxSpine>4.5 Å)
 
 #### Row 4: ``` Dihedral angles ``` 
@@ -181,6 +182,7 @@ List of dihedral angles used for conformational assignments.
 | Arg | φ,ψ of HRD-Arg in L region	of Ramachandran	map for	active kinases
 | XDFG | φ,ψ of X of XDFG motif. B region for BLAminus state of active kinases
 | DFG |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Asp	of DFG motif. L region for BLAminus state of active kinases
+| DFGAsp-rot | χ<sub>1</sub> of DFGAsp (DFG2) residue. Active kinases should have trans rotamer: χ<sub>1</sub> in (120°,240°)
 | DFG2 |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Phe of DFG	motif. A region for BLAminus state of active kinases
 | DFG3 |  φ,ψ of Gly of DFG	motif. A region for BLA(A)minus state of active kinases
 | APE6 |  φ,ψ of APE6 residue (6th residue from end of activation loop: X in XxxAPE). APE7,APE6 == AA or BL for active kinases
