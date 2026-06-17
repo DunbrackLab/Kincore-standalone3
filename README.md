@@ -114,6 +114,7 @@ The 5th column contains another header that tells you what kind of data follows 
 | score  273.7 | HMM score of the chain A sequence for CAMK.hmm |
 | Active | The activation loop and αC-helix pass all of the criteria for active kinases |
 | DFGin | The DFG Phe (or equivalent residue) is flipped "in" towards the αC-helix |
+| DFGAsp-rot-in | The χ<sub>1</sub> rotamer of the DFG Asp residue is trans, allowing it to bind ATP and Mg |
 | BLAminus | The backbone dihedrals of the first three residues of the XDFG motif occupy the Ramachandran regions B, L, and A, and the χ1 dihedral of the DFG Phe sidechain (or equivalent residue) is gauche-minus|
 | Saltbr-in | A salt bridge is formed between the αC-helix Glu and β3-strand Lys |
 | ActLoopNT-in | The N-terminus of the activation loop (near the DFG motif) is hydrogen bonded to the HRD loop |
