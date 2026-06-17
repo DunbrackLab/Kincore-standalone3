@@ -181,8 +181,7 @@ List of dihedral angles used for conformational assignments.
 | HRD |	φ,ψ	of HRD-His in A region	of Ramachandran	map for	active kinases
 | Arg | φ,ψ of HRD-Arg in L region	of Ramachandran	map for	active kinases
 | XDFG | φ,ψ of X of XDFG motif. B region for BLAminus state of active kinases
-| DFG |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Asp	of DFG motif. L region for BLAminus state of active kinases
-| DFGAsp-rot | χ<sub>1</sub> of DFGAsp (DFG2) residue. Active kinases should have trans rotamer: χ<sub>1</sub> in (120°,240°)
+| DFG |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Asp	of DFG motif. L region for BLAminus state of active kinases (and trans χ<sub>1</sub> rotamer)
 | DFG2 |  φ,ψ,χ<sub>1</sub>,χ<sub>2</sub> of Phe of DFG	motif. A region for BLAminus state of active kinases
 | DFG3 |  φ,ψ of Gly of DFG	motif. A region for BLA(A)minus state of active kinases
 | APE6 |  φ,ψ of APE6 residue (6th residue from end of activation loop: X in XxxAPE). APE7,APE6 == AA or BL for active kinases
