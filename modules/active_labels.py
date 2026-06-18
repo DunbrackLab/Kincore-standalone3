@@ -5,7 +5,7 @@ Created on Mon Jan 20 21:13:13 2020
 
 @author: vivekmodi
 added 2025 crieria for active kinases. RLD 12/12/2025
-modified on 02/11/2026. JG
+Last edited on Thu June 18, 2026 by JG
 """
 
 import math
@@ -19,7 +19,7 @@ def dihe_in_range(left, right, value):
     else:
         return False
     
-def make_apelabel(apelabel):    
+def make_apedihelabel(apelabel):
     apedihe="APEdihe_"
     if "APE10-dihe-none" in apelabel: apedihe = apedihe + 'n'
     if "APE10-dihe-in" in apelabel: apedihe = apedihe + 'i'
@@ -41,7 +41,9 @@ def make_apelabel(apelabel):
     if "APE67-dihe-in" in apelabel: apedihe = apedihe + 'i'
     if "APE67-dihe-na" in apelabel: apedihe = apedihe + 'a'
     if "APE67-dihe-out" in apelabel: apedihe = apedihe + 'o'
+    return apedihe
 
+def make_apedistlabel(apelabel):    
     apedist="APEdist_"
     if "APE12-dist-none" in apelabel: apedist =apedist+'n'
     if "APE12-dist-in" in apelabel: apedist =apedist+'i'
@@ -59,8 +61,8 @@ def make_apelabel(apelabel):
     if "APE9-dist-in" in apelabel: apedist =apedist+'i'
     if "APE9-dist-na" in apelabel: apedist =apedist+'a'
     if "APE9-dist-out" in apelabel: apedist =apedist+'o'
+    return apedist
 
-    return(apedihe, apedist)
 
 def active_labels(index, df):
     hbondcutoff=3.6
@@ -137,7 +139,6 @@ def active_labels(index, df):
     # HRD requirement; skipping exception for AATK, LMTK2, LMTK3 for now
     # HRD: phi (-180,0); psi (-100,0)
     # Arg: phi (0,180); psi (-100,50)
-
     if df.at[index,'aFasp_restype'] != "D":
         HRD_label = "HRD-na" + df.at[index,'aFasp_restype']
     elif max( HRD_Phi, HRD_Psi, Arg_Phi, Arg_Psi)>900: # none if disordered
@@ -304,13 +305,16 @@ def active_labels(index, df):
         APE12_dist_label="APE12-dist-na"
     df.at[index, 'APE12_dist_label']=APE12_dist_label
 
+    APEdihe_label=f'{APE10_dihe_label} {APE9_dihe_label} {APE8_dihe_label} {APE8_rot_label} {APE67_dihe_label}'
+    APEdist_label=f'{APE12_dist_label} {APE11_dist_label} {APE10_dist_label} {APE9_dist_label}'
+    apedihe=make_apedihelabel(APEdihe_label)
+    apedist=make_apedistlabel(APEdist_label)
+    
+    APE_label = f'{APEdihe_label} {APEdist_label}'
 
-    APE_label=f'{APE10_dihe_label} {APE9_dihe_label} {APE8_dihe_label} {APE8_rot_label} {APE67_dihe_label}'
-    APE_label=f'{APE_label} {APE12_dist_label} {APE11_dist_label} {APE10_dist_label} {APE9_dist_label}'
-    (apedihe, apedist)=make_apelabel(APE_label)
     df.at[index, 'APE_label']=APE_label
-    df.at[index, 'APEdihe_label']=apedihe
-    df.at[index, 'APEdist_label']=apedist
+    df.at[index, 'APEdihe_label']=APEdihe_label
+    df.at[index, 'APEdist_label']=APEdist_label
 
     ActLoopCT_label="ActLoopCT-in"
     if APEtype=="noAPE":

@@ -1,0 +1,17 @@
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          Sequence        family CAMK  hmm CAMK     score  273.7   length 405
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          Labels          Active   DFGin    DFGAsp-rot-in BLAminus Chelix-in   Saltbr-in   ActLoopNT-in   ActLoopCT-in   HRD-in Spine-in  
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          APEdiheLabels   APE10-dihe-na APE9-dihe-na APE8-dihe-in APE8-rot-in APE67-dihe-in
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          APEdistLabels   APE12-dist-in APE11-dist-in APE10-dist-in APE9-dist-in
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          NTdomResidues   Lys.K162     Glu.E181     Glu4.Q185    HPN7.L196 
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          CTdomResidues   XHRD.I253    HRD.H254     Arg.R255     HRDAsp.D256  aFasp.D311 
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          DFGResidues     XDFG.A273    Asp.D274     Phe.F275     Gly.G276     DFG4.W277   DFG6.V279 
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          APEResidues     APE.E299     APE6.D294    APE7.L293    APE8.T292    APE9.G291   APE10.C290 APE11.L289 APE12.T288
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          HRDbbDihedrals  HRDHis    -63.28  -60.88 HRDArg   73.60    1.59
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          XDFGbbDihedrals XDFG     -139.20 -172.08 DFGAsp   52.22   80.16 DFGPhe  -90.83   24.66 DFGGly  -49.87  -44.18
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          APEbbDihedrals  APE6      -62.23  -14.30 APE7    -43.16  -62.50 APE8   -110.77  140.24 APE9    119.45 -153.19 APE10  -153.42  162.50
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          scDihedrals     DFGAsp    196.46   -3.74 DFGPhe  282.61   72.55 APE8    313.06
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          APEDistances    APE9_Arg   3.68 APE10_DFG4   5.27 APE11_DFG4  10.96 APE12_DFG4   8.17
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          SpineDistances  Spine1     3.59 Spine2       3.51 Spine3       3.91 MaxSpine     3.91
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          OtherDistances  Glu4_Phe   5.58 Lys_Phe     15.10 Lys_Glu      9.45 SaltBr       2.91 DFG6_XHRD   2.93
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          Ligands         ADP:1388,MG:1389,MG:1390,MG:1394    ATPlike,Allosteric,Allosteric,Allosteric
+1ol5      0 A    Active_DFGin_BLAminus_SBin_NTin_CTin          Actloop         Len   26    Ave 17.70   Min 12.06   Max 28.30
