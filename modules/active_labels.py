@@ -144,9 +144,9 @@ def active_labels(index, df):
         HRD_label="HRD-none"
     else:
         if ( dihe_in_range(-180,  0, HRD_Phi) and  # HRD_Phi in (-180,0)
-             dihe_in_range(-100,  0, HRD_Psi) and  # HRD_Psi in (-100,0)
+             dihe_in_range(-100,  50, HRD_Psi) and  # HRD_Psi in (-100,50)
              dihe_in_range(   0,180, Arg_Phi) and  # Arg_Phi in (0,180)
-             dihe_in_range(-100, 50, Arg_Psi) ):   # Arg_Psi in (-100,50)
+             dihe_in_range(-50, 100, Arg_Psi) ):   # Arg_Psi in (-50,100)
             HRD_label="HRD-in"
         else:
             HRD_label="HRD-out"
