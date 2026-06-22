@@ -205,7 +205,7 @@ def active_labels(index, df):
     else:
         APE8_dihe_label="APE8-dihe-out"
         if (dihe_in_range(-180, 0,APE8_Phi) and
-            dihe_in_range(50, 180,APE8_Psi)):
+            (dihe_in_range(50, 180,APE8_Psi) or dihe_in_range(-180,-140,APE8_Psi)):
             APE8_dihe_label="APE8-dihe-in"
     df.at[index, 'APE8_dihe_label']=APE8_dihe_label
 
@@ -225,7 +225,7 @@ def active_labels(index, df):
     if APEtype=="TYR":
         if max(APE9_Phi, APE9_Psi)>900:
             APE9_dihe_label="APE9-dihe-none"
-        elif (dihe_in_range(-180, 0,APE9_Phi) and dihe_in_range(50, 180,APE9_Psi)):
+        elif (dihe_in_range(-180, 0,APE9_Phi) and (dihe_in_range(50, 180,APE9_Psi) or dihe_in_range(-180,-140,APE9_Psi)):
             APE9_dihe_label="APE9-dihe-in"
         else:
             APE9_dihe_label="APE9-dihe-out"
@@ -239,7 +239,7 @@ def active_labels(index, df):
     if APEtype=="TYR":
         if max(APE10_Phi,APE10_Psi) > 900:
             APE10_dihe_label="APE10-dihe-none"
-        elif dihe_in_range(-180, 0, APE10_Phi) and dihe_in_range(50, 180, APE10_Psi):
+        elif dihe_in_range(-180, 0, APE10_Phi) and (dihe_in_range(50, 180, APE10_Psi) or dihe_in_range(-180,-140,APE10_Psi)):
             APE10_dihe_label="APE10-dihe-in"
         else:
             APE10_dihe_label="APE10-dihe-out"
