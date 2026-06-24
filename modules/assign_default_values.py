@@ -3,7 +3,7 @@
 """
 Created on Mon Aug  3 12:27:13 2020
 Edited on Wed Aug 30, 2023 by RLD
-Last edited on Wed Nov 30, 2024 by JG
+Last edited on Wed June 24, 2026 by JG
 @author: vivekmodi
 """
 
@@ -19,8 +19,11 @@ def assign_default_values(index,conf_df):
     conf_df.at[index,'ActLoopNT_label']='None'
     conf_df.at[index,'ActLoopCT_label']='None'
     conf_df.at[index,'APE_label']='None' # Not used anywhere currently
+    conf_df.at[index,'APEdihe_label']='None'
+    conf_df.at[index,'APEdist_label']='None'
+
     conf_df.at[index, 'HRD_label'] = 'None'
-    conf_df.at[index, 'vActLoopCT_label'] = 'XXXXXXXXXAPE'
+    conf_df.at[index, 'vActLoopCT_label'] = 'XXXXXXXXXAPE' # "Verbose ActLoopCT label" not used anywhere currently
     conf_df.at[index,'Spine_label']='None'
     conf_df.at[index,'Saltbr_label']='None'
     conf_df.at[index,'Chelix_label']='None'
@@ -34,7 +37,7 @@ def assign_default_values(index,conf_df):
     conf_df.at[index,'Group']='None'
     conf_df.at[index,'hmm']='None'
 
-    conf_df.at[index,'APE3-aFasp3-dis']=999 #Added 07/10/2024 - JG
+    conf_df.at[index,'APE3-aFasp3-dis']=999 #Not used anywhere currently 
     conf_df.at[index,'APE10-DFG4-dis']=999 #Added 11/20/2024 - JG
     conf_df.at[index,'APE11-DFG4-dis']=999 #Added 11/20/2024 - JG
     conf_df.at[index,'APE12-DFG4-dis']=999 #Added 11/20/2024 - JG
@@ -49,7 +52,7 @@ def assign_default_values(index,conf_df):
     conf_df.at[index,'Lys-Glu-dis']=999
     conf_df.at[index,'LysNZ-GluOE-dis']=999
 
-    conf_df.at[index,'aFasp3_num']=0 #Added 07/10/2024 - JGM
+    conf_df.at[index,'aFasp3_num']=0 #Not used anywhere currently 
     conf_df.at[index,'real_aFasp3_num']=0
     conf_df.at[index,'aFasp3_restype']='-'
 
