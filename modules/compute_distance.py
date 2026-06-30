@@ -171,7 +171,7 @@ def compute_distance(pdbfilename,index,conf_df,structure):
     conf_df.at[index,'ActLoopBfacMin']=min_bfactor
     conf_df.at[index,'ActLoopBfacMax']=max_bfactor
     conf_df.at[index,'ActLoopNresidues']=actloop_residues
-    
+    conf_df.at[index,'ActLoopMissing']=((apenum - dfgnum) + 1) - actloop_residues #Added 06/30/26 - JG
     for i in range(int(dfgnum)+5,int(apenum)-7):
         for atom1 in ('OD1','OD2'):
             for atom2 in ('OG','OG1','OH'):

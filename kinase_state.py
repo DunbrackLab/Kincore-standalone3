@@ -365,6 +365,7 @@ def identify_state(args):
 
                 f'{introstring}'
                 f'{"Actloop":16} '
+                f'Mis {int(conf_df.at[index, "ActLoopMissing"]):4}    '
                 f'Len {int(conf_df.at[index, "ActLoopNresidues"]):4}    '
                 f'Ave {conf_df.at[index, "ActLoopBfacAve"]:.2f}   '
                 f'Min {conf_df.at[index, "ActLoopBfacMin"]:.2f}   '

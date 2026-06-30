@@ -185,11 +185,12 @@ with open(sys.argv[1], 'r') as f:
                 key = ''
                 if 'Actloop' not in db[l[0]][l[1]][l[2]].keys():
                     db[l[0]][l[1]][l[2]]['Actloop'] = {}
-                db[l[0]][l[1]][l[2]]['Actloop']['Length'] = l[5]
+                db[l[0]][l[1]][l[2]]['Actloop']['Missing'] = l[6]
+                db[l[0]][l[1]][l[2]]['Actloop']['Length'] = l[8]
                 db[l[0]][l[1]][l[2]]['Actloop']['Bfac'] = {}
-                db[l[0]][l[1]][l[2]]['Actloop']['Bfac']['avg'] = l[6]
-                db[l[0]][l[1]][l[2]]['Actloop']['Bfac']['min'] = l[7]
-                db[l[0]][l[1]][l[2]]['Actloop']['Bfac']['max'] = l[8]
+                db[l[0]][l[1]][l[2]]['Actloop']['Bfac']['avg'] = l[10]
+                db[l[0]][l[1]][l[2]]['Actloop']['Bfac']['min'] = l[12]
+                db[l[0]][l[1]][l[2]]['Actloop']['Bfac']['max'] = l[14]
             if l[4] == 'Autoinhibit':
                 prev_set = 'Autoinhibit'
                 key = ''
