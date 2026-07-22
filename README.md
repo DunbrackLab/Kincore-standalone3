@@ -200,14 +200,12 @@ ActLoopCT residues are enumerated backwards (C-term. to N-term.) starting with G
 
 ### Row 9: ``` HRD_bbDihedrals ```
 Backbone (φ, ψ) dihedral angles of the HRD loop (also called "catalytic loop").
-| Nomenclature | Description |
 | ------------------- | ------------------- |
 | HRD |	φ,ψ	of HRD-His in A region	of Ramachandran	map for	active kinases.|
 | Arg | φ,ψ of HRD-Arg in L region	of Ramachandran	map for	active kinases.|
 
 ### Row 10: ``` XDFG_bbDihedrals ```
 Backbone (φ, ψ) dihedral angles of the XDFG (X-Asp-Phe-Gly) motif at the N-terminus of the activation loop.
-| Nomenclature | Description |
 | ------------------- | ------------------- |
 | XDFG | φ,ψ of X of XDFG motif. B region for BLAminus state of active kinases.|
 | DFGAsp |  φ,ψ of Asp	of DFG motif. L region for BLAminus state of active kinases.|
@@ -216,7 +214,6 @@ Backbone (φ, ψ) dihedral angles of the XDFG (X-Asp-Phe-Gly) motif at the N-ter
 
 ### Row 11: ``` APE_bbDihedrals ```
 Backbone (φ, ψ) dihedral angles of the Activation Loop C-terminal segment (ActLoopCT).
-| Nomenclature | Description |
 | ------------------- | ------------------- |
 | APE6 |  φ,ψ of APE6 residue (6th residue from end of activation loop: X in XxxAPE). APE7,APE6 == AA or BL for active kinases.|
 | APE7 |  φ,ψ of APE7 residue (6th residue from end of activation loop: X in XxxxAPE). APE7,APE6 == AA or BL for active kinases.|
@@ -226,7 +223,6 @@ Backbone (φ, ψ) dihedral angles of the Activation Loop C-terminal segment (Act
 
 ### Row 12: ``` scDihedrals ```
 Sidechain dihedral angles of select residues involved in conformational assignments (χ<sub>1</sub> and, for certain residues, χ<sub>2</sub>).
-| Nomenclature | Description |
 | ------------------- | ------------------- |
 | DFGAsp |  χ<sub>1</sub>,χ<sub>2</sub> of Asp	of DFG motif. trans χ<sub>1</sub> rotamer for active kinases.|
 | DFGPhe |  χ<sub>1</sub>,χ<sub>2</sub> of Phe of DFG	motif. gauche-minus χ<sub>1</sub> rotamer for active kinases.|
@@ -234,7 +230,6 @@ Sidechain dihedral angles of select residues involved in conformational assignme
 
 ### Row 13: ``` APE_Distances ```
 Distances involving ActLoopCT residues used for conformational assignments of non-TYR kinases.
-| Nomenclature | Description |
 | ------------------- | ------------------- |
 | APE9_Arg | APE9-Cα / hRd-Arg O for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases.|
 | APE10_DFG4 | APE10-Cβ / DFG4-Cα for ActLoopCT-in/ActLoopCT-out calculation for nonTYR kinases.|
@@ -243,7 +238,6 @@ Distances involving ActLoopCT residues used for conformational assignments of no
 
 ### Row 14: ``` Other_Distances ```
 Distances involving the DFG motif, ActLoopNT, and C-helix residues used for conformational assignments.
-| Nomenclature | Description |
 | ------------------- | ------------------- |
 | Glu4_Phe | Glu4-Cα / DFG-Phe Cζ distance for DFGin/DFGout/DFGinter calculation. Glu4 is 4 residues after the salt-bridge Glu.|
 | Lys_Phe | Lys-Cα / DFG-Phe Cζ distance for DFGin/DFGout/DFGinter calculation. Lys is the salt-bridge Lys.|
@@ -253,6 +247,7 @@ Distances involving the DFG motif, ActLoopNT, and C-helix residues used for conf
 
 ### Row 15: ``` Spine_Distances ```
 Distances used to measure the state of the regulatory spine (Spine-in/Spine-out). 
+| ------------------- | ------------------- |
 | Spine1 | Nearest sidechain-atom distance between HRD-His and DFG-Phe.|
 | Spine2 | Nearest sidechain-atom distance between DFG-Phe and Glu4.|
 | Spine3 | Nearest sidechain-atom distance between Glu4 and HPN7.|
@@ -271,6 +266,7 @@ List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, 
 
 #### Row 17: ``` Actloop ``` 
 Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Useful for calculating min(pLDDT) of activation loop of AlphaFold/Boltz models.
+| ------------------- | ------------------- |
 | Mis | Number of residues in the activation loop with missing Ca coordinates|
 | Len | Length of the activation loop sequence starting from the Asp of the DFG and ending at the Glu of the APE (or equivalent residue)|
 | Ave | Average B-factor of Ca atoms in the activation loop (or pLDDT from AlphaFold/Boltz models)|
