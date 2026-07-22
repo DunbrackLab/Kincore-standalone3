@@ -271,6 +271,11 @@ List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, 
 
 #### Row 17: ``` Actloop ``` 
 Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Useful for calculating min(pLDDT) of activation loop of AlphaFold/Boltz models.
+| Mis | Number of residues in the activation loop with missing Ca coordinates|
+| Len | Length of the activation loop sequence starting from the Asp of the DFG and ending at the Glu of the APE (or equivalent residue)|
+| Ave | Average B-factor of Ca atoms in the activation loop (or pLDDT from AlphaFold/Boltz models)|
+| Min | Minimum B-factor of Ca atoms in the activation loop (or pLDDT from AlphaFold/Boltz models)|
+| Max | Maximum B-factor of Ca atoms in the activation loop (or pLDDT from AlphaFold/Boltz models)|
 
 #### Row 18: ``` Autoinhibit ``` 
-Present if there is any Ser, Thr, or Tyr in activation loop in hydrogen bonding distance of HRD-Asp
+Present if there is any Ser, Thr, or Tyr in activation loop within hydrogen bonding distance of HRD-Asp. Gives the residue number of the hydrogen bond donor, the atom names of the acceptor and donor and the distance between them. 
