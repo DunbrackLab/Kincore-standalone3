@@ -260,7 +260,7 @@ Distances used to measure the state of the regulatory spine (Spine-in/Spine-out)
 | Spine3 | Nearest sidechain-atom distance between Glu4 and HPN7.|
 | MaxSpine | Maximum value of the three spine distances to determine if spine is broken (Spine-out when MaxSpine>4.5 Å).|
 
-#### Row 16: ``` Ligands ``` 
+### Row 16: ``` Ligands ``` 
 List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, and types
 | Nomenclature | Description |
 | ------------------- | ------------------- |
@@ -271,7 +271,7 @@ List of ligands and their types (3 or 5 letter codes from PDB, residue numbers, 
 | Type3 | Ligand occupies Chelix site.|
 | Allosteric | Ligand is elsewhere.|
 
-#### Row 17: ``` Actloop ``` 
+### Row 17: ``` Actloop ``` 
 Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Useful for calculating min(pLDDT) of activation loop of AlphaFold/Boltz models.
 | Property | Description |
 | ------------------- | ------------------- |
@@ -281,5 +281,5 @@ Minimum, maximum, and average of B-factors of Ca atoms of activation loop. Usefu
 | Min | Minimum B-factor of Ca atoms in the activation loop (or pLDDT from AlphaFold/Boltz models)|
 | Max | Maximum B-factor of Ca atoms in the activation loop (or pLDDT from AlphaFold/Boltz models)|
 
-#### Row 18: ``` Autoinhibit ``` 
+### Row 18: ``` Autoinhibit ``` 
 Present if there is any Ser, Thr, or Tyr in activation loop within hydrogen bonding distance of HRD-Asp. Gives the residue number of the hydrogen bond donor, the atom names of the acceptor and donor and the distance between them. 
