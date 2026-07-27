@@ -136,6 +136,14 @@ def assign_default_values(index,conf_df):
     conf_df.at[index,'real_HRD_num']=0
     conf_df.at[index,'HRD_restype']='-'
 
+    conf_df.at[index,'HRD7_num']=0
+    conf_df.at[index,'real_HRD7_num']=0
+    conf_df.at[index,'HRD7_restype']='-'
+
+    conf_df.at[index,'HRD8_num']=0
+    conf_df.at[index,'real_HRD8_num']=0
+    conf_df.at[index,'HRD8_restype']='-'
+
     conf_df.at[index,'Arg_num']=0
     conf_df.at[index,'real_Arg_num']=0
     conf_df.at[index,'Arg_restype']='-'

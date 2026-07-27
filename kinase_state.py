@@ -168,7 +168,7 @@ def identify_state(args):
             model_id=conf_df.at[index,"Model_id"]
             chain_id=conf_df.at[index,"Chain_id"]
 
-            for resname in ("XDFG","Lys","Glu","Glu4","Asp","Phe","Gly","HRD","XHRD","Arg","HRDAsp", "DFG4", "DFG6", "APE", "APE3", "APE6", "APE7", "APE8", "APE9", "APE10", "APE11", "APE12","APEp2","APEp3","HPN7","aFasp","GRL8","Hinge1"):
+            for resname in ("XDFG","Lys","Glu","Glu4","Asp","Phe","Gly","HRD","XHRD","Arg","HRDAsp", "HRD7", "HRD8", "DFG4", "DFG6", "APE", "APE3", "APE6", "APE7", "APE8", "APE9", "APE10", "APE11", "APE12","APEp2","APEp3","HPN7","aFasp","GRL8","Hinge1"):
                 res1=int(conf_df.at[index,resname+"_num"])
                 if s2cdict is not None:
                     conf_df.at[index, f'real_{resname}_num'] = conf_df.at[index, f'{resname}_num']
@@ -276,6 +276,8 @@ def identify_state(args):
                 f'{conf_df.at[index, "HRD_string"]:<12} '
                 f'{conf_df.at[index, "Arg_string"]:<12} '
                 f'{conf_df.at[index, "HRDAsp_string"]:<12} '
+                f'{conf_df.at[index, "HRD7_string"]:<12} '
+                f'{conf_df.at[index, "HRD8_string"]:<12} '
                 f'{conf_df.at[index, "aFasp_string"]:<11}\n'
 
                 f'{introstring}'

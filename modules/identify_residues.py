@@ -298,6 +298,21 @@ def identify_residues(pdbfilename,index,conf_df, s2cdict):
                 if hmm_index==hrd[group]:
                     conf_df.at[index,'HRD_num']=s2cnum
                     conf_df.at[index,'HRD_restype']=hsps.aln[1][col_num-1].upper()
+                    rescount=0
+                    for i in range(0,8):
+                        if hsps.aln[1][col_num-1+i] != "-":
+                            rescount = rescount+1
+                        else:
+                            continue
+
+                        if rescount==7 and conf_df.at[index, 'HRD7_num'] == 0: #Not used anywhere currently
+                            conf_df.at[index, 'HRD7_num']=s2cnum+rescount-1
+                            conf_df.at[index,'HRD7_restype']=hsps.aln[1][col_num-1+i].upper()
+
+                        if rescount==8 and conf_df.at[index, 'HRD8_num'] == 0: #Not used anywhere currently
+                            conf_df.at[index, 'HRD8_num']=s2cnum+rescount-1
+                            conf_df.at[index,'HRD8_restype']=hsps.aln[1][col_num-1+i].upper()
+                            break
 
                 if hmm_index==arg[group]:
                     conf_df.at[index,'Arg_num']=s2cnum
