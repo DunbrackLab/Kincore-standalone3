@@ -76,7 +76,13 @@ def identify_residues(pdbfilename,index,conf_df, s2cdict):
              'NEK':145, 'OTHER':144, 'PAN3':188, 'PEAK':230, 'PIK3R4':146, 'PINK1':238, 'PKDCC':165, 'POMK':154, 
              'PXK':168, 'RGC':140, 'RNASEL':151, 'RPS6KC1':617, 'SCYL':141, 'STE':141, 'STK31':171, 'TBCK':134, 'TKL':142, 
              'TP53RK':154, 'TYR':146, 'ULK':143, 'WNK':149, 'CDC7':147, 'ATM':358}
-    
+
+    #Conserved valine in the glycine-rich loop (catalytic spine residue)
+    grl8=    {'AGC':15, 'BUB':15, 'CAMK':15, 'CK1':15, 'CMGC':15, 'EIF2AK41':34, 'HASP':15, 'MAP3K123':22, 'MOS':23, 
+            'NEK':15, 'OTHER':15, 'PAN3':None, 'PEAK': None, 'PIK3R4':22, 'PINK1':22, 'PKDCC':23, 'POMK':22, 
+            'PXK':None, 'RGC': None, 'RNASEL':27, 'RPS6KC1': None, 'SCYL': None, 'STE':15, 'STK31':None, 'TBCK': None,'TKL':15, 
+            'TP53RK': None,'TYR':15, 'ULK':15, 'WNK':16, 'CDC7':23, 'ATM':None}
+
     # beginning of beta strand B4 (H of HPN)
     # hpn=   {'AGC':58,'BUB':55,'CAMK':57,'CK1':54,'CMGC':56,'EIF2AK41':79,'HASP':70, 'MAP3K123':53, 'MOS':63,
     hpn=   {'AGC':58,'BUB':55,'CAMK':57,'CK1':54,'CMGC':59,'EIF2AK41':79,'HASP':70, 'MAP3K123':53, 'MOS':63,
@@ -237,6 +243,9 @@ def identify_residues(pdbfilename,index,conf_df, s2cdict):
                             conf_df.at[index,'Glu4_restype']=hsps.aln[1][col_num-2].upper()
                             print("# ",pdbfilename,"Glu4 shifted left one residue", conf_df.at[index,'Glu4_num'], conf_df.at[index,'Glu4_restype'])
 
+                if hmm_index==grl8[group]:
+                    conf_df.at[index,'GRL8_num']=s2cnum
+                    conf_df.at[index,'GRL8_restype']=hsps.aln[1][col_num-1].upper()
 
                 # RLD added these  12/22; ape9 find by traversing hit sequence and counting residues
                 if hmm_index==ape[group]:
@@ -344,6 +353,7 @@ def identify_residues(pdbfilename,index,conf_df, s2cdict):
                         
                 if hmm_index==hinge1[group]:
                     conf_df.at[index,'Hinge1_num']=int(s2cnum)
+                    conf_df.at[index,'Hinge1_restype']=hsps.aln[1][col_num-1].upper()
 
                 if hmm_index in type2_resi[group]:
                     type2_resi_num.add(int(s2cnum))

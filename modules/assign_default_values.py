@@ -52,11 +52,15 @@ def assign_default_values(index,conf_df):
     conf_df.at[index,'Lys-Glu-dis']=999
     conf_df.at[index,'LysNZ-GluOE-dis']=999
 
+    conf_df.at[index, 'GRL8_num']=0 #Added 07/27/2026 -JG
+    conf_df.at[index, 'real_GRL8_num']=0
+    conf_df.at[index, 'GRL8_restype']='-'
+
     conf_df.at[index,'aFasp3_num']=0 #Not used anywhere currently 
     conf_df.at[index,'real_aFasp3_num']=0
     conf_df.at[index,'aFasp3_restype']='-'
 
-    conf_df.at[index,'aFasp_num']=0 #Added 07/10/2024 - JGM
+    conf_df.at[index,'aFasp_num']=0 #Added 07/10/2024 - JG
     conf_df.at[index,'real_aFasp_num']=0
     conf_df.at[index,'aFasp_restype']='-'
 
@@ -161,6 +165,7 @@ def assign_default_values(index,conf_df):
     conf_df.at[index,'DFG4_restype']='-'
 
     conf_df.at[index,'Hinge1_num']=0
+    conf_df.at[index,'Hinge1_restype']='-'
     conf_df.at[index, 'Score']=0
 
     conf_df.at[index,'XHRD_Phi']=999
