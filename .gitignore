@@ -11,4 +11,4 @@ kinasechains_renum_kcname_012126/
 *.cif
 *.tsv
 tally_active.py
-modules/__pycache__
+modules/__pycache__/
